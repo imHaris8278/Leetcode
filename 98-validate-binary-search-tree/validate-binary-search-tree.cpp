@@ -11,7 +11,8 @@
  */
 class Solution {
 public:
-    bool isValidBST(TreeNode* root) {
+    bool isValidBST(TreeNode* root)
+    {
         return isValidBSTHelper(root, nullptr, nullptr);
     }
 
@@ -21,12 +22,12 @@ public:
         {
             return true;
         }
-        
-        if ((minNode != nullptr && root->val <= minNode->val) || 
-            (maxNode != nullptr && root->val >= maxNode->val)) {
+
+        if ((minNode != nullptr && root->val <= minNode->val) || (maxNode != nullptr && root->val >= maxNode->val))
+        {
             return false;
         }
-        
+
         return isValidBSTHelper(root->left, minNode, root) && isValidBSTHelper(root->right, root, maxNode);
     }
 };
